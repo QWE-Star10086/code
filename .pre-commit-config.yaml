@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.4.0   # 这里填写你需要的 black 版本号
+    hooks:
+      - id: black
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.6   # 这里填写你需要的 ruff-pre-commit 版本号
+    hooks:
+      - id: ruff
+
+  - repo: https://github.com/kynan/nbstripout
+    rev: master   # 你可以指定特定 tag 或 commit
+    hooks:
+      - id: nbstripout
