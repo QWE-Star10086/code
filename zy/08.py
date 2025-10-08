@@ -1,0 +1,11 @@
+FP=["xz","sc","yn","gz","wns"]
+print(FP)
+print(sorted(FP))
+FP.reverse()
+print(FP)
+FP.reverse()
+print(FP)
+FP.sort()
+print(FP)
+FP.sort(reverse=True)
+print(FP)

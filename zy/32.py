@@ -1,0 +1,1 @@
+print('Gorky once said,"Books are the steps of human progress"')
