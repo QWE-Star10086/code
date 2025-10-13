@@ -1,0 +1,40 @@
+name: Word Counter CI
+
+# 触发条件：推送到 main 分支或创建 PR 到 main 分支
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v4  # 检出代码仓库
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'  # 缓存依赖
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8  # 安装代码风格检查工具
+
+    - name: Lint with flake8
+      run: |
+        # 检查严重错误（E9,F63,F7,F82）
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # 检查代码风格警告（不中断工作流）
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
+
+    - name: Test with unittest
+      run: |
+        python -m unittest discover -v  # 运行所有单元测试

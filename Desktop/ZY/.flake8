@@ -1,0 +1,13 @@
+[flake8]
+# 最大行长度（默认 79，这里放宽到 120 更符合现代编码习惯）
+max-line-length = 120
+
+# 忽略特定检查规则（E203 是关于冒号前空格的严格检查，通常可忽略）
+extend-ignore = E203
+
+# 排除不需要检查的目录/文件
+exclude = 
+    .git,
+    __pycache__,
+    venv,
+    *.pyc
