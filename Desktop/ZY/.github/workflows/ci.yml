@@ -1,11 +1,11 @@
 name: Word Counter CI
 
-# 触发条件：推送到 main 分支或创建 PR 到 main 分支
+# 触发条件：推送到 master 分支或创建 PR 到 master 分支
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build-and-test:
