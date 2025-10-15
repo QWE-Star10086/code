@@ -1,0 +1,25 @@
+cities={
+    "a":{
+        "country":"US",
+        "population":"900,000",
+        "fact":"jddfsfh"
+    },
+    "b":{
+        "country":"UK",
+        "population":"600,000",
+        "fact":"jddfsfhgjehwhwh"
+    },
+    "c":{
+        "country":"China",
+        "population":"50,000",
+        "fact":"fsggwgg"
+    },
+}
+for cite,cite_info in cities.items():
+    print(f"\ncitename:{cite}")
+    countryname=cite_info["country"]
+    p=cite_info["population"]
+    f=cite_info["fact"]
+    print(f"\n所属国家：{countryname}")
+    print(f"\n人口：{p}")
+    print(f"\n事实：{f}")

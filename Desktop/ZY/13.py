@@ -1,0 +1,5 @@
+num=list(range(1,101))
+print(num)
+print(min(num))
+print(max(num))
+print(sum(num))
